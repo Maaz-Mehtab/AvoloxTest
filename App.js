@@ -257,16 +257,20 @@ class App extends React.Component {
                   #
                 </Text>
               </View>
-              <View onPress={() => this.sortBySymbol} style={styles.tableHeaderView}>
+              <TouchableOpacity
+                activeOpacity={1}
+                onPress={() => this.sortBySymbol()} style={styles.tableHeaderView}>
                 <Text style={styles.tableHeaderText}>
                   Symbol
                 </Text>
-              </View>
-              <View onPress={() => this.sortByPrice} style={styles.tableHeaderView}>
+              </TouchableOpacity>
+              <TouchableOpacity
+                activeOpacity={1}
+                onPress={() => this.sortByPrice()} style={styles.tableHeaderView}>
                 <Text style={styles.tableHeaderText}>
                   Price
                 </Text>
-              </View>
+              </TouchableOpacity>
 
               <View style={[styles.tableHeaderView, { borderRightWidth: 1 }]}>
                 <Text style={styles.tableHeaderText}>
@@ -467,7 +471,6 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   tableHeaderView: {
-    // width: 100,
     flex: 2,
     borderWidth: 1,
     borderRightWidth: 0,
@@ -497,7 +500,6 @@ const styles = StyleSheet.create({
   },
   tableRowText: {
     fontSize: 16,
-    fontWeight: 'bold',
     textAlign: 'center',
     paddingTop: 10,
     color: '#000',
